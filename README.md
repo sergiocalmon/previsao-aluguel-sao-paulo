@@ -13,15 +13,17 @@ Projeto de regressão end-to-end seguindo o checklist de projetos de ML: anális
 5. **Otimização** — `GridSearchCV` no Random Forest e avaliação final no conjunto de teste (70/30).
 
 ## Resultados
+Resultados com `random_state=42` (reprodutíveis):
+
 | Modelo | RMSE treino | RMSE validação cruzada (10 folds) |
 |---|---|---|
-| Regressão Linear | 1.918 | 1.921 |
-| Decision Tree | 39 | 1.793 |
-| Random Forest | 680 | 1.786 |
+| Regressão Linear | 1.953 | 1.974 |
+| Decision Tree | 24 | 2.277 |
+| Random Forest | 664 | 1.788 |
 
-- A Decision Tree apresenta **overfitting**: erro de ≈ 39 no treino contra ≈ 1.790 na validação.
-- O Random Forest, otimizado com GridSearch, chegou a um **RMSE de ≈ R$ 1.806 no conjunto de teste**, contra um aluguel médio de ≈ R$ 3.078.
-- O erro ainda é alto (~59% da média). Próximos passos: log do preço, tratamento de outliers, Gradient Boosting e *features* de localização.
+- A Decision Tree apresenta **overfitting**: erro de ≈ 24 no treino contra ≈ 2.277 na validação, pior que a Regressão Linear.
+- O Random Forest, otimizado com GridSearch, chegou a um **RMSE de ≈ R$ 1.770 no conjunto de teste**, contra um aluguel médio de ≈ R$ 3.078.
+- O erro ainda é alto (~57% da média). Próximos passos: log do preço, tratamento de outliers, Gradient Boosting e *features* de localização.
 
 ## Como executar
 ```bash
@@ -35,3 +37,6 @@ Python · pandas · scikit-learn · Plotly · Matplotlib · Seaborn
 
 ## Créditos
 Projeto desenvolvido durante o curso *Fundamentos de IA e Machine Learning* da Asimov Academy.
+
+## Licença
+MIT — veja [LICENSE](LICENSE).
