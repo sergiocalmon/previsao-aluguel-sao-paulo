@@ -1,0 +1,7 @@
+mapbox_token
+.env
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+venv/
+o-checklist-de-um-projeto-de-machine-learning.pdf
