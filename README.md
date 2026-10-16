@@ -12,6 +12,18 @@ Projeto de regressão end-to-end seguindo o checklist de projetos de ML: anális
 4. **Avaliação** — RMSE no treino e *cross-validation* (10 folds).
 5. **Otimização** — `GridSearchCV` no Random Forest e avaliação final no conjunto de teste (70/30).
 
+## Visualizações
+![Mapa de preços](images/mapa-precos.png)
+*Aluguéis mais altos se concentram no centro expandido; 516 anúncios têm coordenadas inválidas e ficaram fora do mapa.*
+
+| | |
+|---|---|
+| ![Distribuição](images/distribuicao-precos.png) | ![Correlação](images/correlacao.png) |
+| ![Comparação de modelos](images/comparacao-modelos.png) | ![Importância das variáveis](images/importancia-variaveis.png) |
+
+![Previsto x real](images/previsto-vs-real.png)
+*O modelo acompanha bem aluguéis até ~R$ 5.000 e subestima os imóveis mais caros, onde há menos exemplos.*
+
 ## Resultados
 Resultados com `random_state=42` (reprodutíveis):
 
