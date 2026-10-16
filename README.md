@@ -13,14 +13,22 @@ Projeto de regressão end-to-end seguindo o checklist de projetos de ML: anális
 5. **Otimização** — `GridSearchCV` no Random Forest e avaliação final no conjunto de teste (70/30).
 
 ## Resultados
-O melhor Random Forest no GridSearch teve RMSE de validação cruzada ≈ R$ 1.800 (veja o notebook para os números do conjunto de teste).
+| Modelo | RMSE treino | RMSE validação cruzada (10 folds) |
+|---|---|---|
+| Regressão Linear | 1.918 | 1.921 |
+| Decision Tree | 39 | 1.793 |
+| Random Forest | 680 | 1.786 |
+
+- A Decision Tree apresenta **overfitting**: erro de ≈ 39 no treino contra ≈ 1.790 na validação.
+- O Random Forest, otimizado com GridSearch, chegou a um **RMSE de ≈ R$ 1.806 no conjunto de teste**, contra um aluguel médio de ≈ R$ 3.078.
+- O erro ainda é alto (~59% da média). Próximos passos: log do preço, tratamento de outliers, Gradient Boosting e *features* de localização.
 
 ## Como executar
 ```bash
 pip install -r requirements.txt
 jupyter notebook dados-imobiliarios.ipynb
 ```
-O mapa usa Mapbox: crie um arquivo `mapbox_token` (ignorado pelo git) com seu token público em https://account.mapbox.com/ — ou troque por `px.scatter_map` / `open-street-map`.
+O mapa interativo usa OpenStreetMap e não exige token.
 
 ## Stack
 Python · pandas · scikit-learn · Plotly · Matplotlib · Seaborn
